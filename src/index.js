@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import Card from "./_components/Card"
+import Welcome from './_components/Welcome'
+/*
 const user = {
     firstName: "Yerry",
     lastName: "Aguirre",
@@ -24,6 +28,27 @@ const element = (
         <img src={user.avatar}/>
     </div>
 )
+*/
 const container = document.getElementById("root")
+const element = (
+    <div>
+        <Welcome username="Yerry"/>
+        <Card 
+            title="Technique fitness"
+            description="Learn amazing stret workout and calisthnics"
+            img= "https://raw.githubusercontent.com/RpL02/FitnessApp/styles/src/images/exercise.png"
+            leftColor="#A74CF2" 
+            rightColor="#617BFB"
+        />
+        <br/>
+        <Card 
+            title="Technique Karate"
+            description="Learn amazing stret Karate"
+            img= "https://raw.githubusercontent.com/RpL02/FitnessApp/styles/src/images/exercise.png"
+            leftColor="#20285e" 
+            rightColor="#17a2b8"
+        />
+    </div>
+)
 
 ReactDOM.render(element, container)
