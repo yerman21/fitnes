@@ -1,12 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const user = {
+    firstName: "Yerry",
+    lastName: "Aguirre",
+    avatar: "https://lh3.googleusercontent.com/proxy/ph7Z-fhagB_zZJAhQLZB8Fzg4cYDOhPI0t1Bwet40b1b-cqA2aEe4-41XkeCPgKqS6luAWlSxqPlLqgOMVexar0ase8WjFqgiuMu8LB4lSTtDpoDQmPtq8CzkzgEGmU"
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function getName(user){
+    return `${user.firstName} ${user.lastName}`
+}
+
+function getGreeting(user){
+    if(user){
+        return <h1>HEllo {getName(user)}</h1>
+    }
+    return <h1>Hello Stranger</h1>
+}
+
+const element = (
+    <div>
+        {getGreeting()}
+        <img src={user.avatar}/>
+    </div>
+)
+const container = document.getElementById("root")
+
+ReactDOM.render(element, container)
